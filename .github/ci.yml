@@ -1,5 +1,5 @@
 # .github/workflows/ci.yml
-name: CI Pipeline
+name: CI/CD Pipeline
 
 on:
   push:
@@ -29,3 +29,15 @@ jobs:
       - name: Run tests
         run: |
           pytest
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Simulate deployment
+        run: |
+          echo "Deploying the app..."
+          python app.py
