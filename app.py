@@ -4,5 +4,5 @@ def add(a, b):
 
 if __name__ == "__main__":
     print("Running the app...")
-    result = add(2, 3)
+    result = add(2, 34)
     print(f"2 + 3 = {result}")
